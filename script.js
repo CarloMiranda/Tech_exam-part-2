@@ -3,6 +3,7 @@ const input = `
 3,0,0,0
 0,3,0,0
 0,0,3,0
+0,0,0,3
 0,0,0,6
 9,0,0,0
 12,0,0,0
@@ -20,9 +21,9 @@ for (const point of points) {
     let joinedConstellations = [];
 
     for (const constellation of constellations) {
-        for (const cPoints of constellation) {
-            if (manhattanDistance(cPoints, points) <= 3) {
-                joinedConstellations.push(constellations);
+        for (const cPoint of constellation) {
+            if (manhattanDistance(cPoint, point) <= 3) {
+                joinedConstellations.push(constellation);
                 break;
             }
         }
@@ -42,3 +43,4 @@ for (const point of points) {
 }
 
 console.log(`Number of constellations: ${constellations.length}`);
+
